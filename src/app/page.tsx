@@ -3,67 +3,81 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductGrid from "./components/ProductGrid";
 import ShopFooter from "./components/ShopFooter";
+import PromoPopup from "./components/PromoPopup";
+
 
 export const metadata: Metadata = {
   title: "Trndz Pro | Modern Finds for Everyday Living",
   description:
-    "An editorial edit of Amazon finds   bold, refined, and timeless essentials curated with a design-first aesthetic.",
+    "Editorial Amazon finds curated for modern simplicity, utility, and daily lifestyle.",
 };
 
 export default function HomePage() {
   const categories = ["Beauty", "Women", "Men", "Baby"];
 
   return (
-    <main className="relative min-h-screen bg-neutral-50 text-neutral-900 overflow-x-hidden selection:bg-neutral-900 selection:text-white">
-      {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-6 bg-neutral-900 text-white overflow-hidden">
-        {/* Background giant text */}
-        <h1 className="absolute inset-0 flex justify-center items-center text-[32vw] sm:text-[24vw] md:text-[18vw] font-extrabold text-neutral-800 leading-none tracking-tighter select-none">
+    <main className="bg-neutral-50 text-neutral-900 overflow-x-hidden">
+
+      {/* ================= HERO ================= */}
+      <section className="relative w-full min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-neutral-900 text-white overflow-hidden">
+
+        {/* Soft background word */}
+        <h1 className="absolute inset-0 flex justify-center items-center text-[32vw] font-extrabold text-neutral-800/30 tracking-tighter select-none pointer-events-none">
           TRNDZ
         </h1>
 
-        {/* Foreground content */}
-        <div className="relative z-10">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/10 via-neutral-900/70 to-neutral-900/95" />
+
+        {/* Foreground */}
+        <div className="relative z-10 max-w-xl mx-auto">
+
           <Image
             src="/logo.png"
             alt="Trndz Pro Logo"
-            width={130}
-            height={130}
-            className="mx-auto mb-10 opacity-90"
+            width={120}
+            height={120}
+            className="mx-auto mb-8 opacity-90"
           />
-          <h2 className="text-[10vw] sm:text-[7vw] md:text-[6vw] font-extrabold uppercase tracking-tight leading-[0.9] max-w-5xl mx-auto">
-            Modern Finds for Everyday Living
-          </h2>
-          <p className="mt-8 text-neutral-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-            Editorially curated Amazon picks that merge utility, form, and
-            emotion   designed to live beautifully in the everyday.
+
+          <p className="uppercase text-[10px] tracking-[0.35em] text-neutral-400 mb-3">
+            Curated Amazon Finds
           </p>
+
+          <h2 className="text-[10vw] sm:text-6xl font-extrabold uppercase leading-[0.9] tracking-tight mb-4">
+            Modern Finds For Everyday Living
+          </h2>
+
+          <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-sm mx-auto mb-8">
+            Simple, intentional pieces chosen to enhance your daily rituals and
+            bring beauty into the everyday.
+          </p>
+
           <Link
             href="#featured"
-            className="inline-block mt-10 border border-white px-10 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+            className="block w-full sm:w-auto mx-auto border border-white px-10 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all"
           >
-            Explore
+            Explore Collection
           </Link>
         </div>
 
-        <p className="absolute bottom-8 right-8 text-xs uppercase tracking-[0.25em] text-neutral-500">
+        <p className="absolute bottom-6 right-6 text-[9px] tracking-wider text-neutral-500 select-none">
           curated by trndz.pro
         </p>
       </section>
 
-      {/* CATEGORY SECTION */}
-      <section className="relative w-full py-28 bg-white border-t border-neutral-200">
-        {/* Large translucent text in background */}
-        <h3 className="absolute text-[26vw] sm:text-[18vw] md:text-[12vw] font-extrabold text-neutral-100 leading-none tracking-tighter top-1/2 -translate-y-1/2 left-0 w-full text-center select-none pointer-events-none">
+      {/* ================= CATEGORIES ================= */}
+      <section className="relative w-full py-20 bg-white">
+        <h3 className="absolute text-[30vw] font-extrabold text-neutral-100 top-1/2 -translate-y-1/2 w-full text-center select-none pointer-events-none">
           CATEGORIES
         </h3>
 
-        <div className="relative z-10 flex flex-wrap justify-center gap-4 px-6">
+        <div className="relative z-10 grid grid-cols-2 gap-4 px-5 max-w-md mx-auto">
           {categories.map((cat) => (
             <Link
               key={cat}
               href={`/${cat.toLowerCase()}`}
-              className="text-sm sm:text-base uppercase tracking-widest border border-neutral-800 px-8 py-3 rounded-full bg-transparent hover:bg-neutral-900 hover:text-white transition-all duration-300"
+              className="flex items-center justify-center h-28 bg-neutral-900 text-white rounded-xl text-sm font-semibold tracking-wider shadow-sm active:scale-[0.98] transition"
             >
               {cat}
             </Link>
@@ -71,49 +85,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED SECTION */}
-      <section
-        id="featured"
-        className="relative w-full py-28 bg-neutral-50 flex flex-col items-center overflow-hidden"
-      >
-        <h3 className="absolute text-[26vw] sm:text-[18vw] md:text-[12vw] font-extrabold text-neutral-100 leading-none tracking-tighter top-1/2 -translate-y-1/2 w-full text-center select-none pointer-events-none">
+      {/* ================= FEATURED ================= */}
+      <section id="featured" className="relative w-full py-20 bg-neutral-50">
+        <h3 className="absolute text-[30vw] font-extrabold text-neutral-100 top-1/2 -translate-y-1/2 w-full text-center select-none pointer-events-none">
           FEATURED
         </h3>
 
-        <div className="relative z-10 text-center mb-14 px-8">
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4 text-neutral-900">
+        <div className="relative z-10 text-center mb-10 px-6">
+          <h2 className="text-4xl sm:text-6xl font-bold mb-3">
             Featured Collection
           </h2>
-          <p className="text-neutral-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Each product is a visual and tactile experience   modern,
-            functional, and designed to last.
+          <p className="text-neutral-500 text-base max-w-md mx-auto">
+            Modern pieces curated for a clean, elevated daily experience.
           </p>
         </div>
 
-        <div className="relative z-10 max-w-7xl w-full px-4">
+        <div className="relative z-10 max-w-6xl mx-auto px-3">
           <ProductGrid featured />
         </div>
       </section>
 
-      {/* BRAND SECTION */}
-      <section className="w-full text-center px-8 py-28 bg-neutral-900 text-white">
-        <h3 className="text-6xl sm:text-7xl md:text-8xl font-extrabold mb-8 leading-[0.95]">
+      {/* ================= BRAND ================= */}
+      <section className="w-full text-center px-6 py-20 bg-neutral-900 text-white">
+        <h3 className="text-4xl sm:text-6xl font-extrabold mb-5 leading-tight">
           The Art of Everyday
         </h3>
-        <p className="text-neutral-300 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
-          At Trndz Pro, design is a statement of intent   a belief that simplicity 
-          and impact can coexist in everything we use and wear.
+        <p className="text-neutral-300 max-w-md mx-auto text-base leading-relaxed mb-10">
+          At Trndz Pro, design is a choice that blends simplicity and quiet
+          presence into what you use daily.
         </p>
         <a
           href="https://www.instagram.com/trndz.pro"
           target="_blank"
-          className="inline-block border border-white px-12 py-3 text-sm uppercase tracking-wider rounded-full hover:bg-white hover:text-black transition-all duration-300"
+          className="inline-block border border-white px-10 py-3 text-sm uppercase tracking-wider rounded-full hover:bg-white hover:text-black transition"
         >
           Follow @trndz.pro
         </a>
       </section>
+      <PromoPopup />
 
-      {/* FOOTER */}
+
+      {/* ================= FOOTER ================= */}
       <ShopFooter />
     </main>
   );

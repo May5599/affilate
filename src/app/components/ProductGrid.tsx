@@ -20,14 +20,23 @@ export default function ProductGrid({ category, featured }: Props) {
   }
 
   return (
-    <div className="grid 
-      grid-cols-2               /* ✅ 2 columns on mobile */
-      sm:grid-cols-2            /* ✅ still 2 on small screens */
-      md:grid-cols-3            /* ✅ 3 on medium devices */
-      lg:grid-cols-4            /* ✅ 4 on desktops */
-      gap-4 sm:gap-6 md:gap-8 
-      max-w-7xl w-full px-2 sm:px-4 md:px-6
-      place-items-center">
+    <div
+      className="
+        grid
+        grid-cols-2 
+        gap-5                    /* ⭐ More breathing room on mobile */
+        sm:gap-6 
+        md:grid-cols-3 
+        lg:grid-cols-4 
+        md:gap-8
+        max-w-7xl 
+        w-full 
+        px-4                    /* ⭐ Wider padding on mobile */
+        sm:px-6 
+        md:px-8
+        place-items-stretch     /* ⭐ Cards stretch instead of squeeze */
+      "
+    >
       {filtered.map((p) => (
         <ProductCard key={p.name} product={p} />
       ))}
