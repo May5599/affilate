@@ -169,7 +169,7 @@ import ProductCard from "../components/ProductCard";
 export default async function CategoryPage({
   params,
 }: {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
 
