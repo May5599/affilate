@@ -111,3 +111,4 @@ export const products: Product[] = [
     category: "baby",
   },
 ];
+

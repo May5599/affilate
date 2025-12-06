@@ -23,22 +23,32 @@ export default function ProductGrid({ category, featured }: Props) {
     <div
       className="
         grid
-        grid-cols-2 
-        gap-5                    /* ⭐ More breathing room on mobile */
-        sm:gap-6 
-        md:grid-cols-3 
-        lg:grid-cols-4 
-        md:gap-8
-        max-w-7xl 
-        w-full 
-        px-4                    /* ⭐ Wider padding on mobile */
-        sm:px-6 
-        md:px-8
-        place-items-stretch     /* ⭐ Cards stretch instead of squeeze */
+        grid-cols-1
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+
+        gap-6 sm:gap-8 md:gap-10
+        max-w-7xl w-full mx-auto
+        px-4 sm:px-6 md:px-8
+
+        items-start               /* ⭐ Prevents overlap */
       "
     >
       {filtered.map((p) => (
-        <ProductCard key={p.name} product={p} />
+        <div
+          key={p.name}
+          className="
+            bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow
+            overflow-hidden flex flex-col
+
+            /* ⭐ Make cards wider safely */
+            max-w-[360px] mx-auto   /* Perfect width control */
+            w-full                  /* let grid auto-adjust */
+          "
+        >
+          <ProductCard product={p} />
+        </div>
       ))}
     </div>
   );
