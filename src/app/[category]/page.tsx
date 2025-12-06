@@ -166,10 +166,14 @@ import { products } from "../data/products";
 import CategoryTabs from "../components/CategoryTabs";
 import ProductCard from "../components/ProductCard";
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  const { category } = params;
-  const title = category.charAt(0).toUpperCase() + category.slice(1);
+export default async function CategoryPage({
+  params,
+}: {
+  params: { category: string };
+}) {
+  const { category } = await params;
 
+  const title = category.charAt(0).toUpperCase() + category.slice(1);
   const filtered = products.filter((p) => p.category === category);
 
   return (

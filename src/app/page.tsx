@@ -6,9 +6,62 @@ import ShopFooter from "./components/ShopFooter";
 import PromoPopup from "./components/PromoPopup";
 
 export const metadata: Metadata = {
-  title: "Trndz Pro | Modern Finds for Everyday Living",
+  title: "Trndz Pro — Curated Amazon Finds for Modern Daily Living",
   description:
-    "Editorial Amazon finds curated for modern simplicity, utility, and daily lifestyle.",
+    "Discover modern Amazon finds curated for beauty, fashion, home, and baby. Simple, intentional pieces chosen to elevate your everyday living.",
+  metadataBase: new URL("https://www.trndzpro.com"),
+  alternates: {
+    canonical: "https://www.trndzpro.com",
+  },
+  keywords: [
+    "Amazon finds",
+    "curated products",
+    "modern lifestyle",
+    "editorial shopping",
+    "minimalist essentials",
+    "Trndz Pro",
+    "beauty products",
+    "women fashion",
+    "men fashion",
+    "baby essentials",
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Trndz Pro — Curated Amazon Finds for Modern Living",
+    description:
+      "Minimal, intentional Amazon finds curated across beauty, fashion, home, and baby. Designed to elevate your everyday routine.",
+    url: "https://www.trndzpro.com",
+    type: "website",
+    siteName: "Trndz Pro",
+    images: [
+      {
+        url: "https://www.trndzpro.com/logo.png",
+        width: 1200,
+        height: 1200,
+        alt: "Trndz Pro Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trndz Pro — Curated Amazon Finds for Modern Daily Living",
+    description:
+      "Explore curated Amazon picks for beauty, fashion, home, and baby — modern essentials for your everyday life.",
+    images: ["https://www.trndzpro.com/logo.png"],
+    creator: "@trndz.pro",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function HomePage() {
@@ -16,6 +69,31 @@ export default function HomePage() {
 
   return (
     <main className="bg-neutral-50 text-neutral-900 overflow-x-hidden">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Trndz Pro",
+            url: "https://www.trndzpro.com",
+            description:
+              "Trndz Pro curates Amazon finds in beauty, fashion, home, and baby — minimal, modern, intentional essentials.",
+            publisher: {
+              "@type": "Organization",
+              name: "Trndz Pro",
+              logo: "https://www.trndzpro.com/logo.png",
+            },
+            sameAs: ["https://instagram.com/trndz.pro"],
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://www.trndzpro.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
 
       {/* ================= HERO ================= */}
       <section className="relative w-full min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-neutral-900 text-white overflow-hidden">

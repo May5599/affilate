@@ -16,30 +16,65 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trndz Pro | Curated Amazon Finds for Modern Living",
+  title: "Trndz Pro — Curated Amazon Finds for Modern Daily Living",
   description:
-    "An editorial curation of Amazon finds — refined beauty, fashion, and lifestyle products for everyday design lovers.",
+    "Discover modern Amazon finds curated for beauty, fashion, home, and baby. Simple, intentional pieces chosen to elevate your everyday living.",
+  metadataBase: new URL("https://www.trndzpro.com"),
+  alternates: {
+    canonical: "https://www.trndzpro.com",
+  },
+  keywords: [
+    "Amazon finds",
+    "curated products",
+    "modern lifestyle",
+    "editorial shopping",
+    "minimalist essentials",
+    "Trndz Pro",
+    "beauty products",
+    "women fashion",
+    "men fashion",
+    "baby essentials",
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "Trndz Pro | Curated Amazon Finds for Modern Living",
+    title: "Trndz Pro — Curated Amazon Finds for Modern Living",
     description:
-      "Explore thoughtfully chosen Amazon essentials across beauty, fashion, and lifestyle — modern, timeless, and design-forward.",
-    url: "https://trndz.pro",
+      "Minimal, intentional Amazon finds curated across beauty, fashion, home, and baby. Designed to elevate your everyday routine.",
+    url: "https://www.trndzpro.com",
+    type: "website",
     siteName: "Trndz Pro",
     images: [
       {
-        url: "/og-cover.jpg",
+        url: "https://www.trndzpro.com/logo.png",
         width: 1200,
-        height: 630,
-        alt: "Trndz Pro Editorial Curation",
+        height: 1200,
+        alt: "Trndz Pro Logo",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
-  icons: {
-    icon: "/favicon.ico",
+  twitter: {
+    card: "summary_large_image",
+    title: "Trndz Pro — Curated Amazon Finds for Modern Daily Living",
+    description:
+      "Explore curated Amazon picks for beauty, fashion, home, and baby — modern essentials for your everyday life.",
+    images: ["https://www.trndzpro.com/logo.png"],
+    creator: "@trndz.pro",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      
+    },
   },
 };
+
 
 // Root Layout
 export default function RootLayout({
