@@ -12,7 +12,7 @@ export const products: Product[] = [
   {
     name: "Neutrogena Hydro Boost Gel Cream Face Moisturizer",
     image: "/hydroboost.jpg",
-    link: "", // waiting for its geni.us link
+    link: "https://geni.us/PNql", // waiting for its geni.us link
     desc: "Hydrating gel-cream infused with hyaluronic acid for dewy, smooth, and glowing skin all day.",
     category: "beauty",
     featured: true,
@@ -20,14 +20,14 @@ export const products: Product[] = [
   {
     name: "CeraVe Face Cream BUNDLE",
     image: "/cerave-bundle.jpg",
-    link: "", // waiting for its geni.us link
+    link: "https://geni.us/UTIoJVL", // waiting for its geni.us link
     desc: "Gentle face care duo enriched with ceramides and niacinamide to keep your skin barrier strong.",
     category: "beauty",
   },
   {
     name: "THE ORDINARY 2 Packs of Hyaluronic Acid 2% + B5",
     image: "/theordinary.jpg",
-    link: "", // waiting for its geni.us link
+    link: "https://geni.us/8BdgzLm", // waiting for its geni.us link
     desc: "Two-pack of cult-favorite hydrating serum that leaves skin soft, plump, and refreshed.",
     category: "beauty",
   },
@@ -36,7 +36,7 @@ export const products: Product[] = [
   {
     name: "Oyamiki Oversized Cropped Zip Up Hoodie for Women",
     image: "/oyamiki-hoodie.jpg",
-    link: "https://geni.us/VYGdTij",
+    link: "https://geni.us/YVGdTJj",
     desc: "Trendy oversized cropped hoodie soft, comfy, and perfect for cozy streetwear looks.",
     category: "women",
     featured: true,
@@ -75,7 +75,7 @@ export const products: Product[] = [
   {
     name: "Men's Hoodie Winter Full Zip Heavyweight",
     image: "/mens-ziphoodie.jpg",
-    link: "https://geni.us/yJQy",
+    link: "https://geni.us/VJQy",
     desc: "Full-zip heavyweight hoodie designed for ultimate comfort and warmth.",
     category: "men",
   },
@@ -91,7 +91,7 @@ export const products: Product[] = [
   {
     name: "Toddler Beanie / Winter Cap",
     image: "/beanie.png",
-    link: "https://geni.us/gK3s7b",
+    link: "https://geni.us/gk3xs7b",
     desc: "Soft and skin-friendly winter cap that keeps your baby warm.",
     category: "baby",
     featured: true,
