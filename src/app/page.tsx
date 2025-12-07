@@ -5,6 +5,8 @@ import ProductGrid from "./components/ProductGrid";
 import ShopFooter from "./components/ShopFooter";
 import PromoPopup from "./components/PromoPopup";
 
+
+
 export const metadata: Metadata = {
   title: "Trndz Pro — Curated Amazon Finds for Modern Daily Living",
   description:
@@ -69,6 +71,8 @@ export default function HomePage() {
 
   return (
     <main className="bg-neutral-50 text-neutral-900 overflow-x-hidden">
+
+      
 
       <script
         type="application/ld+json"

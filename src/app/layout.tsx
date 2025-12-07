@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 // Fonts
 const geistSans = Geist({
@@ -20,9 +21,7 @@ export const metadata: Metadata = {
   description:
     "Discover modern Amazon finds curated for beauty, fashion, home, and baby. Simple, intentional pieces chosen to elevate your everyday living.",
   metadataBase: new URL("https://www.trndzpro.com"),
-  alternates: {
-    canonical: "https://www.trndzpro.com",
-  },
+  alternates: { canonical: "https://www.trndzpro.com" },
   keywords: [
     "Amazon finds",
     "curated products",
@@ -64,26 +63,29 @@ export const metadata: Metadata = {
     images: ["https://www.trndzpro.com/logo.png"],
     creator: "@trndz.pro",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      
-    },
-  },
+  robots: { index: true, follow: true },
 };
 
-
-// Root Layout
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Ads Global Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17785612936"
+        />
+
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17785612936');
+          `}
+        </Script>
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-neutral-50 text-neutral-900 antialiased tracking-tight`}
       >
